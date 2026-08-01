@@ -31,11 +31,18 @@ class UserCreate(BaseModel):
     password: str
     phone_number: str
 
+class UserCreateOut(BaseModel):
+    id: int
+    email: EmailStr
+    created_at: datetime
+    phone_number: str
+    class Config:
+        orm_mode = True
+
 class UserOut(BaseModel):
     id:int
     email: EmailStr
     created_at: datetime
-    phone_number: str
     class Config:
         orm_mode = True
 
